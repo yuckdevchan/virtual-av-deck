@@ -1,0 +1,58 @@
+{
+    "settings": {
+        "page_title": "Virtual AV Deck",
+        "icon_size": "6em",
+        "show_tooltips": true
+    },
+    "dashboard_items": [
+        {
+            "name": "Global Mute",
+            "id": "e603d11b-db01-44cd-a270-256f40cd341e",
+            "enabled": true,
+            "desc": "Mute default sink and source",
+            "icon": "mdi:volume-high",
+            "activated_icon": "mdi:volume-mute",
+            "activated_color": "#1969f4",
+            "action": {
+                "type": "command",
+                "toggle": true,
+                "data": {
+                    "command": "pactl set-sink-mute @DEFAULT_SINK@ toggle && pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+                }
+            }
+        },
+        {
+            "name": "Mute Mic",
+            "id": "e603d11b-dd01-44cd-a270-256f40cd341e",
+            "enabled": true,
+            "desc": "Mute default source",
+            "icon": "mdi:microphone",
+            "activated_icon": "mdi:microphone-off",
+            "activated_color": "#1969f4",
+            "action": {
+                "type": "command",
+                "toggle": true,
+                "data": {
+                    "command": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+                }
+            }
+        },
+        {
+            "name": "GitHub",
+            "id": "e603d11b-dc01-44cd-a270-256f40cd341e",
+            "enabled": false,
+            "desc": "Open GitHub",
+            "icon": "skill-icons:github-dark",
+            "activated_icon": "skill-icons:github-dark",
+            "activated_color": "transparent",
+            "action": {
+                "type": "uri",
+                "toggle": false,
+                "data": {
+                    "uri": "https://github.com/yuckdevchan/virtual-av-deck",
+                    "handler": "system"
+                }
+            }
+        }
+    ]
+}
